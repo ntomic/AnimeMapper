@@ -23,7 +23,12 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="1e3906ed-3b1b-4c5f-a9ae-86df879a1a5a">
+        <schema name="information_schema" object-types="column, table, view" />
+        <schema name="myanimedb" object-types="column, function, table, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1e3906ed-3b1b-4c5f-a9ae-86df879a1a5a">
@@ -31,9 +36,14 @@
 
 SELECT * FROM storage;
 
-DELETE FROM myanimedb.anime where AnimeID = 1;
+DELETE FROM myanimedb.anime where AnimeID > 1;
+DELETE FROM myanimedb.anime_storage where AnimeID > 1;
 
-SELECT * FROM anime;]]></console>
+SELECT * FROM anime;
+
+SELECT * FROM anime_storage;
+
+select storageDirectoryPath from storage;]]></console>
       <console name="Connection 1" type="STANDARD"><![CDATA[select * from anime;]]></console>
     </connection>
   </component>
